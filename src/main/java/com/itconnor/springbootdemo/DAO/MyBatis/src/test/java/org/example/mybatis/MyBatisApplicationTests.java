@@ -15,7 +15,12 @@ class MyBatisApplicationTests {
     @Test
     public void testfindAll() {
         List<Student> list = studentMapper.findAll();
-            list.forEach(name-> System.out.println(name));
+            list.forEach(student ->System.out.println(student));
+    }
+
+    @Test
+    public void testDeleteById() {
+        studentMapper.deleteById(1);
     }
 
 }
