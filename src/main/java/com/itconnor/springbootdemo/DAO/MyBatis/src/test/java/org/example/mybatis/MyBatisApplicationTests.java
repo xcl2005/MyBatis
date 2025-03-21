@@ -15,12 +15,25 @@ class MyBatisApplicationTests {
     @Test
     public void testfindAll() {
         List<Student> list = studentMapper.findAll();
-            list.forEach(student ->System.out.println(student));
+            list.forEach((Student student)->System.out.println(student));
     }
 
     @Test
     public void testDeleteById() {
-        studentMapper.deleteById(1);
+        studentMapper.deleteById(5);
     }
+    @Test
+    public void testInsert() {
+        Student student = new Student(0,"jack","324324", 18);
+        //如果一行四个数据都为非空，那么插入3个数据会报错。
+        studentMapper.insert(student);
+    }
+    @Test
+    public
+    void testFindById() {
+        Student student = studentMapper.findById("jack","324324");
+        System.out.println(student);
+    }
+
 
 }
